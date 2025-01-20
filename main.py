@@ -48,13 +48,7 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-st.title('PredictaTrade: Stock Price Prediction')
-st.markdown("""
-    This tool allows you to predict stock prices using historical data. Select a stock and choose the prediction duration to get the forecast.
-    Enjoy exploring the forecasted stock data and its components.
-""")
-
-# Stock Options
+st.title('PredictaTrade')
 stocks = ('GOOG', 'AAPL', 'MSFT', 'GME', 'RELIANCE.NS', 'TCS.NS', 'INFY.NS', 
           'HDFCBANK.NS', 'BAJFINANCE.NS', 'IDFC.NS', 'OLAELEC.NS', 'MRF.NS', 'LICI.NS', 'NVDA')
 
@@ -164,16 +158,16 @@ try:
         line=dict(color='green' if forecast['yhat'][0] < forecast['yhat'].iloc[-1] else 'red', width=2)  # Overall trend
     ))
 
-    # Adjust layout for better zooming and responsiveness
+
     fig1.update_layout(
         title=f'{selected_stock} Stock Price Forecast',
         xaxis_title='Date',
         yaxis_title='Price (USD)',
-        xaxis_rangeslider_visible=True,  # Keep range slider visible
-        xaxis=dict(type="date"),  # Make sure the x-axis is treated as a date for better zooming
-        plot_bgcolor='white',  # Set background color to white
-        paper_bgcolor='white',  # Set paper background to white
-        font=dict(color='black')  # Black font color
+        xaxis_rangeslider_visible=True,  
+        xaxis=dict(type="date"),  
+        plot_bgcolor='white',  
+        paper_bgcolor='white',  
+        font=dict(color='black') 
     )
 
     st.plotly_chart(fig1)
