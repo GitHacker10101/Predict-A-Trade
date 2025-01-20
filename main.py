@@ -184,7 +184,7 @@ try:
     st.write(f"**Percentage Change:** {percentage_change:.2f}%")
 
     # Plot Forecast Components
-    st.write("Trends(Trend, Weekly, Yearly Seasonality)") #Fixed Title Bug 
+    st.write("Trends(Weekly, Yearly Seasonality)") #Fixed Title Bug 
     fig2 = m.plot_components(forecast)
     st.write(fig2)
     
