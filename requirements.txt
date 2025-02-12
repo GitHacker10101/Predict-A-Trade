@@ -3,4 +3,5 @@ prophet
 pandas
 requests
 plotly
+yfinance
 streamlit
